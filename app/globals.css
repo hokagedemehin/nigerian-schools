@@ -25,3 +25,34 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.dash_sidebar {
+  overflow-y: scroll;
+  max-height: 100vh;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.dash_sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.dash_sidebar {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.page_content {
+  overflow-y: scroll;
+  max-height: 100vh;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.page_content::-webkit-scrollbar {
+  display: none;
+}
+
+.page_content {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

@@ -1,3 +1,15 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "next/core-web-vitals",
+    "eslint-config-next"
+  ],
+  "plugins": ["react", "unused-imports"],
+  "rules": {
+    "unused-imports/no-unused-imports": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/no-unescaped-entities": "off"
+  }
 }
