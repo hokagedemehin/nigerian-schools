@@ -5,15 +5,13 @@ import { Typography } from "@/components/index";
 import TopNavComp from "@/components/layout/TopNav";
 
 const SettingsPage = () => {
-  function title() {
-    return (
-      <div className="">
-        <Typography variant="h6" className="font-outfit text-black">
-          Settings
-        </Typography>
-      </div>
-    );
-  }
+  const title = (
+    <div className="">
+      <Typography variant="h6" className="font-outfit text-black">
+        Settings
+      </Typography>
+    </div>
+  );
 
   return (
     <div>

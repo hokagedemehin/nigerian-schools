@@ -13,8 +13,13 @@ const config: Config = {
       },
       colors: {
         main: '#002D72',
+        mainHover: '#002366',
+        otherMain: '#001D49',
         dublicateContrib: '#7B7112',
         unverifiedContrib: '#6E101B',
+        noUniBg: '#EEF4FF',
+        noStateBg: '#FFF3D2',
+        noPolyBg: '#FFE2E2',
       }
     },
   },

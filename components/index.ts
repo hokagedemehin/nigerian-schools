@@ -34,7 +34,15 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Chip from "@mui/material/Chip";
 import Select from "@mui/material/Select";
-// import { faker } from '@faker-js/faker/locale/en_NG';
+import AvatarGroup from '@mui/material/AvatarGroup';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import LinearProgress from '@mui/material/LinearProgress';
+
+import { faker } from '@faker-js/faker/locale/en_NG';
 
 import {
   LineChart,
@@ -51,15 +59,17 @@ import {
 
 import { DataGrid } from "@mui/x-data-grid";
 
-// faker.seed(95)
+faker.seed(95)
 
 export {
   Button,
   Box,
   Toolbar,
   IconButton,
+  AvatarGroup,
   Typography,
   Menu,
+  LinearProgress,
   MenuIcon,
   Container,
   Avatar,
@@ -70,6 +80,11 @@ export {
   AccordionSummary,
   AccordionDetails,
   Skeleton,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
   Input,
   FilledInput,
   OutlinedInput,
@@ -101,4 +116,5 @@ export {
   Cell,
   Chip,
   ChartTooltip,
+  faker,
 };

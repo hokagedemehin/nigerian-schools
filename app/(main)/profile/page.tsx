@@ -5,19 +5,17 @@ import { Typography } from "@/components/index";
 import TopNavComp from "@/components/layout/TopNav";
 
 const ProfilePage = () => {
-  function title() {
-    return (
-      <div className="">
-        <Typography variant="h6" className="font-outfit text-black">
-          Profile
-        </Typography>
-      </div>
-    );
-  }
+  const title = (
+    <div className="">
+      <Typography variant="h6" className="font-outfit text-black">
+        Profile
+      </Typography>
+    </div>
+  );
 
   return (
     <div>
-      <TopNavComp leftSide={title} />;
+      <TopNavComp leftSide={title} />
       <Typography variant="h6" className="font-outfit text-black">
         Nigerian Schools profile
       </Typography>
