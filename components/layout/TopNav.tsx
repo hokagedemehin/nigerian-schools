@@ -1,7 +1,14 @@
 "use client";
 import React, { useEffect, useReducer } from "react";
-import { IoNotificationsOutline, IoMailOutline } from "react-icons/io5";
-import { Typography, IconButton, Avatar, faker } from "@/components/index";
+import { IoNotificationsOutline, IoLogOutOutline } from "react-icons/io5";
+import {
+  Typography,
+  IconButton,
+  Avatar,
+  faker,
+  Menu,
+  MenuItem,
+} from "@/components/index";
 import { BiMenuAltRight } from "react-icons/bi";
 import { styled } from "@mui/material/styles";
 import Drawer from "@mui/material/Drawer";
@@ -71,6 +78,17 @@ const TopNavComp = ({ leftSide }: { leftSide: React.ReactNode }) => {
     setMobileOpen(!mobileOpen);
   };
 
+  // ****** MENU BAR  ********
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleOpenMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div>
       <div className="flex">
@@ -82,20 +100,23 @@ const TopNavComp = ({ leftSide }: { leftSide: React.ReactNode }) => {
           </div>
           {leftSide}
         </div>
-        <div className="flex items-center space-x-2">
-          <div className="flex items-center space-x-1">
+        <div className="flex  space-x-2">
+          <div className="flex  space-x-1">
             <IconButton aria-label="notifications">
               <IoNotificationsOutline className="text-lg text-black md:text-2xl" />
             </IconButton>
-            <IconButton aria-label="mail">
-              <IoMailOutline className="text-lg text-black md:text-2xl" />
+            <IconButton aria-label="mail" onClick={handleOpenMenu}>
+              <IoLogOutOutline className="text-lg text-black md:text-2xl" />
             </IconButton>
           </div>
-          <div className="flex items-center">
+          <div className="flex ">
+            {/* <IconButton aria-label="avatar" onClick={handleOpenMenu}>
+              
+            </IconButton> */}
             <CustomAvatar src={state.avatar} alt="user">
               M
             </CustomAvatar>
-            <div className="hidden pl-1 md:block">
+            <div className=" hidden pl-1 md:flex md:flex-col">
               <div className="flex items-center space-x-1">
                 <Typography
                   variant="body1"
@@ -105,12 +126,15 @@ const TopNavComp = ({ leftSide }: { leftSide: React.ReactNode }) => {
                 </Typography>
                 <Typography
                   variant="body1"
-                  className="font-outfit text-gray-700"
+                  className="font-outfit text-sm text-gray-700"
                 >
                   {state.lastName}
                 </Typography>
               </div>
-              <Typography variant="body2" className="font-outfit text-gray-700">
+              <Typography
+                variant="body2"
+                className="font-outfit text-xs text-gray-700"
+              >
                 {state.role}
               </Typography>
             </div>
@@ -128,6 +152,23 @@ const TopNavComp = ({ leftSide }: { leftSide: React.ReactNode }) => {
       >
         <MobileSideNavComp onClose={handleDrawerToggle} />
       </Drawer>
+      {/* menu bar */}
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleCloseMenu}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        <MenuItem
+          className="font-outfit text-gray-700"
+          onClick={handleCloseMenu}
+        >
+          Logout
+        </MenuItem>
+      </Menu>
     </div>
   );
 };

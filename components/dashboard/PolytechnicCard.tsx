@@ -22,12 +22,14 @@ const CustomSchoolGroupAvatar = styled(AvatarGroup)(({ theme }) => ({
     "& .MuiAvatar-root": {
       width: "40px",
       height: "40px",
+      fontSize: "15px",
     },
   },
   [theme.breakpoints.down("md")]: {
     "& .MuiAvatar-root": {
       width: "30px",
       height: "30px",
+      fontSize: "12px",
     },
   },
 }));
@@ -37,12 +39,14 @@ const CustomContributorGroupAvatar = styled(AvatarGroup)(({ theme }) => ({
     "& .MuiAvatar-root": {
       width: "30px",
       height: "30px",
+      fontSize: "10px",
     },
   },
   [theme.breakpoints.down("md")]: {
     "& .MuiAvatar-root": {
       width: "23px",
       height: "23px",
+      fontSize: "8px",
     },
   },
 }));
@@ -285,7 +289,7 @@ const PolytechnicCardComp = () => {
       )}
       {!polyExists && (
         <div className="">
-          <div className=" bg-noPolyBg w-[17rem] rounded-lg border border-gray-100 p-4 shadow-md">
+          <div className=" w-[17rem] rounded-lg border border-gray-100 bg-noPolyBg p-4 shadow-md">
             <div className="flex">
               <div className="flex flex-1">
                 {/* name */}

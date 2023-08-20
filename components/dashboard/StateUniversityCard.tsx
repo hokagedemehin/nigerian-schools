@@ -22,12 +22,14 @@ const CustomSchoolGroupAvatar = styled(AvatarGroup)(({ theme }) => ({
     "& .MuiAvatar-root": {
       width: "40px",
       height: "40px",
+      fontSize: "16px",
     },
   },
   [theme.breakpoints.down("md")]: {
     "& .MuiAvatar-root": {
       width: "30px",
       height: "30px",
+      fontSize: "12px",
     },
   },
 }));
@@ -37,12 +39,14 @@ const CustomContributorGroupAvatar = styled(AvatarGroup)(({ theme }) => ({
     "& .MuiAvatar-root": {
       width: "30px",
       height: "30px",
+      fontSize: "12px",
     },
   },
   [theme.breakpoints.down("md")]: {
     "& .MuiAvatar-root": {
       width: "23px",
       height: "23px",
+      fontSize: "10px",
     },
   },
 }));

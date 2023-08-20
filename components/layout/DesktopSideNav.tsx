@@ -113,7 +113,7 @@ const DesktopSideNav = () => {
           </div>
         </div>
       </div>
-      <div className="ml-2 w-[13rem] rounded-lg bg-[url(https://res.cloudinary.com/dfmtuwgcf/image/upload/v1692461367/SideNavBg_jgubo4.jpg)] bg-no-repeat object-cover p-4">
+      <div className="ml-2 w-[75%] rounded-lg bg-[url(https://res.cloudinary.com/dfmtuwgcf/image/upload/v1692461367/SideNavBg_jgubo4.jpg)] bg-no-repeat object-cover p-4">
         <div className="">
           <Typography
             variant="body1"
