@@ -18,10 +18,15 @@ import {
   // GridActionsCellItem,
   GridColDef,
   GridRenderCellParams,
+  // GridToolbar,
+  GridToolbarContainer,
+  GridToolbarQuickFilter,
 } from "@mui/x-data-grid";
 import dayjs from "dayjs";
 import Image from "next/image";
 import NoRecentProject from "@/assets/images/NoRecentProject.png";
+import NoSearchResult1 from "@/assets/images/NoSearchResult1.png";
+
 const CustomSchoolLogo = styled(Avatar)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     width: "40px",
@@ -73,7 +78,7 @@ interface IDataTable {
 }
 
 const RecentProjectTable = () => {
-  const [projectExists] = useState(false);
+  const [projectExists] = useState(true);
 
   // ************* TABLE DATA *************
   const [tableData, setTableData] = useState<IDataTable[]>([]);
@@ -225,6 +230,34 @@ const RecentProjectTable = () => {
     );
   };
 
+  const NoSearchResultDataDisplay = () => {
+    return (
+      <div className="flex flex-col items-center justify-center space-y-2">
+        <Image
+          src={NoSearchResult1}
+          alt="empty rows"
+          className="h-auto w-[10rem]"
+          placeholder="blur"
+        />
+        <Typography
+          variant="body1"
+          className="text-center font-outfit text-sm font-medium text-black"
+        >
+          No search result found
+        </Typography>
+      </div>
+    );
+  };
+
+  const CustomeToolBar = () => {
+    return (
+      <GridToolbarContainer>
+        <div className="flex flex-1"></div>
+        <GridToolbarQuickFilter />
+      </GridToolbarContainer>
+    );
+  };
+
   // ************ TABLE COLUMNS ************
   const columns: GridColDef[] = [
     {
@@ -305,8 +338,14 @@ const RecentProjectTable = () => {
             pageSizeOptions={[5, 10, 20]}
             slots={{
               loadingOverlay: LinearProgress,
-              noResultsOverlay: EmptyDataDisplay,
+              noResultsOverlay: NoSearchResultDataDisplay,
               noRowsOverlay: EmptyDataDisplay,
+              toolbar: CustomeToolBar,
+            }}
+            slotProps={{
+              toolbar: {
+                showQuickFilter: true,
+              },
             }}
             // loading
           />
@@ -317,18 +356,18 @@ const RecentProjectTable = () => {
           <DataGrid
             rows={[]}
             columns={columns}
-            // disableRowSelectionOnClick
-            // initialState={{
-            //   pagination: {
-            //     paginationModel: {
-            //       pageSize: 5,
-            //     },
-            //   },
-            // }}
-            // pageSizeOptions={[5, 10, 20]}
+            disableRowSelectionOnClick
+            initialState={{
+              pagination: {
+                paginationModel: {
+                  pageSize: 5,
+                },
+              },
+            }}
+            pageSizeOptions={[5, 10, 20]}
             slots={{
               // loadingOverlay: LinearProgress,
-              noResultsOverlay: EmptyDataDisplay,
+              noResultsOverlay: NoSearchResultDataDisplay,
               noRowsOverlay: EmptyDataDisplay,
             }}
             // loading
