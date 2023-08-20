@@ -205,6 +205,7 @@ const RecentProjectTable = () => {
           src={NoRecentProject}
           alt="empty rows"
           className="h-auto w-[10rem]"
+          placeholder="blur"
         />
         <Typography
           variant="body1"
