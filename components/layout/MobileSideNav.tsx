@@ -23,12 +23,12 @@ const MobileSideNavComp = ({ onClose }: { onClose: () => void }) => {
   };
 
   return (
-    <nav className="flex h-screen w-[15rem] flex-col justify-between bg-main pb-5 pt-10">
+    <nav className="flex h-screen w-[15rem] flex-col justify-between bg-main pb-5 pt-5">
       <div className=" ">
         <Typography variant="h6" className="pl-3 font-outfit text-white">
           Nigerian Schools
         </Typography>
-        <div className="mb-8 mt-4">
+        <div className="mb-4 mt-4">
           <Divider
             orientation="horizontal"
             variant="fullWidth"
@@ -36,9 +36,9 @@ const MobileSideNavComp = ({ onClose }: { onClose: () => void }) => {
           />
         </div>
         <div className="w-[14rem] space-y-3">
-          <Typography variant="body1" className="pl-3 font-outfit text-white">
+          {/* <Typography variant="body1" className="pl-3 font-outfit text-white">
             Main Menu
-          </Typography>
+          </Typography> */}
           {/* overview */}
           <div className="">
             <Link
@@ -51,7 +51,9 @@ const MobileSideNavComp = ({ onClose }: { onClose: () => void }) => {
             >
               <div className="flex items-center space-x-2">
                 <BsGrid className="text-xl" />
-                <span className={`font-outfit text-lg tracking-wider`}>
+                <span
+                  className={`font-outfit text-base tracking-wider md:text-lg`}
+                >
                   Overview
                 </span>
               </div>
@@ -69,7 +71,9 @@ const MobileSideNavComp = ({ onClose }: { onClose: () => void }) => {
             >
               <div className="flex items-center space-x-2">
                 <GoFile className="text-xl" />
-                <span className={`font-outfit text-lg tracking-wider`}>
+                <span
+                  className={`font-outfit text-base tracking-wider md:text-lg`}
+                >
                   Projects
                 </span>
               </div>
@@ -87,7 +91,9 @@ const MobileSideNavComp = ({ onClose }: { onClose: () => void }) => {
             >
               <div className="flex items-center space-x-2">
                 <AiOutlineUser className="text-xl" />
-                <span className={`font-outfit text-lg tracking-wider`}>
+                <span
+                  className={`font-outfit text-base tracking-wider md:text-lg`}
+                >
                   Profile
                 </span>
               </div>
@@ -105,7 +111,9 @@ const MobileSideNavComp = ({ onClose }: { onClose: () => void }) => {
             >
               <div className="flex items-center space-x-2">
                 <AiOutlineSetting className="text-xl" />
-                <span className={`font-outfit text-lg tracking-wider`}>
+                <span
+                  className={`font-outfit text-base tracking-wider md:text-lg`}
+                >
                   Settings
                 </span>
               </div>

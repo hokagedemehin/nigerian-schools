@@ -55,6 +55,8 @@ import {
   Bar,
   Cell,
   Tooltip as ChartTooltip,
+  PieChart,
+  Pie,
 } from "recharts";
 
 import { DataGrid } from "@mui/x-data-grid";
@@ -117,4 +119,6 @@ export {
   Chip,
   ChartTooltip,
   faker,
+  Pie,
+  PieChart, 
 };
