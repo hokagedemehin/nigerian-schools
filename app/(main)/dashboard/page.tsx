@@ -13,6 +13,7 @@ import PrimarySchoolsCard from "@/components/dashboard/PrimarySchoolsCard";
 import ALevelsSchoolCard from "@/components/dashboard/ALevelsSchoolsCard";
 import NuserySchoolsCard from "@/components/dashboard/NuserySchoolsCard";
 import RecentProjectTable from "@/components/dashboard/RecentProjectTable";
+import ContributionPieChart from "@/components/dashboard/ContributionPieChart";
 
 const DahsboardPage = () => {
   const title = (
@@ -30,7 +31,7 @@ const DahsboardPage = () => {
     <div className="">
       <TopNavComp leftSide={title} />
       <div className="mt-8">
-        <div className="flex flex-col space-x-0 space-y-3 md:flex-row md:space-x-3 md:space-y-0">
+        <div className="flex flex-col space-x-0 space-y-3 xl:flex-row xl:space-x-3 xl:space-y-0">
           <div className="flex flex-1 flex-col">
             {/* available projects */}
             <div className="mb-4">
@@ -139,6 +140,7 @@ const DahsboardPage = () => {
           {/* graph | awards */}
           <div className="">
             {/* graph	 */}
+            <ContributionPieChart />
             {/* available awards */}
           </div>
         </div>
