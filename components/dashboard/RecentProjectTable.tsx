@@ -73,7 +73,7 @@ interface IDataTable {
 }
 
 const RecentProjectTable = () => {
-  const [projectExists] = useState(true);
+  const [projectExists] = useState(false);
 
   // ************* TABLE DATA *************
   const [tableData, setTableData] = useState<IDataTable[]>([]);
@@ -127,7 +127,7 @@ const RecentProjectTable = () => {
       };
       data.push(obj);
     }
-    setTableData([]);
+    setTableData(data);
   }, []);
 
   const LogoDataDisplay = (props: GridRenderCellParams<any, string>) => {
