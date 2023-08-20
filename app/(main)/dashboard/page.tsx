@@ -12,6 +12,7 @@ import SecondarySchoolsCard from "@/components/dashboard/SecondarySchoolsCard";
 import PrimarySchoolsCard from "@/components/dashboard/PrimarySchoolsCard";
 import ALevelsSchoolCard from "@/components/dashboard/ALevelsSchoolsCard";
 import NuserySchoolsCard from "@/components/dashboard/NuserySchoolsCard";
+import RecentProjectTable from "@/components/dashboard/RecentProjectTable";
 
 const DahsboardPage = () => {
   const title = (
@@ -142,6 +143,9 @@ const DahsboardPage = () => {
           </div>
         </div>
         {/* recent projects */}
+        <div className="mt-8">
+          <RecentProjectTable />
+        </div>
       </div>
     </div>
   );

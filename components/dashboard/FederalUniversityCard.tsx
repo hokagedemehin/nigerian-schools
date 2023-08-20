@@ -37,12 +37,14 @@ const CustomContributorGroupAvatar = styled(AvatarGroup)(({ theme }) => ({
     "& .MuiAvatar-root": {
       width: "30px",
       height: "30px",
+      fontSize: "0.8rem",
     },
   },
   [theme.breakpoints.down("md")]: {
     "& .MuiAvatar-root": {
       width: "23px",
       height: "23px",
+      fontSize: "0.6rem",
     },
   },
 }));
@@ -285,7 +287,7 @@ const FederalUniversityCardComp = () => {
       )}
       {!federalUniExists && (
         <div className="">
-          <div className=" bg-noUniBg w-[17rem] rounded-lg border border-gray-100 p-4 shadow-md">
+          <div className=" w-[17rem] rounded-lg border border-gray-100 bg-noUniBg p-4 shadow-md">
             <div className="flex">
               <div className="flex flex-1">
                 {/* name */}
