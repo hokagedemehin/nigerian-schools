@@ -60,8 +60,8 @@ const CustomContributorGroupAvatar = styled(AvatarGroup)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     "& .MuiAvatar-root": {
       width: "20px",
-      height: "2px",
-      fontSize: "8px",
+      height: "20px",
+      fontSize: "10px",
     },
   },
 }));
