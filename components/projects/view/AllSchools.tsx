@@ -15,9 +15,11 @@ import "swiper/css/bundle";
 import { styled } from "@mui/material/styles";
 import {
   DataGrid,
+  GridActionsCellItem,
   // GridActionsCellItem,
   GridColDef,
   GridRenderCellParams,
+  GridRowParams,
   // GridToolbar,
   GridToolbarContainer,
   GridToolbarQuickFilter,
@@ -26,6 +28,7 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import NoRecentProject from "@/assets/images/NoRecentProject.png";
 import NoSearchResult1 from "@/assets/images/NoSearchResult1.png";
+import { AiOutlineEdit } from "react-icons/ai";
 
 const CustomSchoolLogo = styled(Avatar)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
@@ -37,17 +40,6 @@ const CustomSchoolLogo = styled(Avatar)(({ theme }) => ({
     height: "30px",
   },
 }));
-
-// const CustomContributorAvatar = styled(Avatar)(({ theme }) => ({
-//   [theme.breakpoints.up("md")]: {
-//     width: "30px",
-//     height: "30px",
-//   },
-//   [theme.breakpoints.down("md")]: {
-//     width: "23px",
-//     height: "23px",
-//   },
-// }));
 
 const CustomContributorGroupAvatar = styled(AvatarGroup)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
@@ -77,7 +69,7 @@ interface IDataTable {
   status: string;
 }
 
-const RecentProjectTable = () => {
+const AllSchoolsComp = () => {
   const [projectExists] = useState(true);
 
   // ************* TABLE DATA *************
@@ -105,26 +97,22 @@ const RecentProjectTable = () => {
           category: "logo",
         }),
         name: faker.helpers.arrayElement([
-          "University of Ibadan",
           "University of Lagos",
+          "University of Ibadan",
           "University of Benin",
-          "University of Abuja",
           "University of Port Harcourt",
-          "University of Calabar",
+          "University of Abuja",
           "University of Jos",
           "University of Ilorin",
           "University of Maiduguri",
-          "University of Uyo",
-          "University of Nigeria",
-          "University of Benin",
-          "University of Abuja",
-          "University of Port Harcourt",
           "University of Calabar",
-          "University of Jos",
-          "University of Ilorin",
-          "University of Maiduguri",
           "University of Uyo",
+          "Nassarawa State University",
           "University of Nigeria",
+          "Auchi Polytechnic, Auchi, Edo State.",
+          "Federal Polytechnic Bali, Taraba State",
+          "Federal Polytechnic Bauchi, Bauchi State",
+          "Gombe state University",
         ]),
         contributors: contributorsAvatar,
         date: dayjs(faker.date.past()).format("MMM DD, YYYY"),
@@ -218,7 +206,7 @@ const RecentProjectTable = () => {
         >
           Nothing to show here, you can change this by contributing
         </Typography>
-        <Button className="font-outsfit mt-7 bg-main font-semibold text-white hover:bg-mainHover">
+        <Button className="mt-7 bg-main font-outfit font-semibold text-white hover:bg-mainHover">
           <Typography
             variant="body2"
             className="font-outfit font-semibold normal-case"
@@ -298,25 +286,49 @@ const RecentProjectTable = () => {
     {
       field: "action",
       headerName: "Action",
-      width: 200,
-      renderCell: () => {
-        return (
-          <Button
-            aria-label="Edit"
-            aria-controls="Edit-button"
-            aria-haspopup="false"
-            // onClick={handleClick}
-            size="small"
-          >
-            <Typography
-              variant="body2"
-              className="font-outfit font-semibold normal-case text-gray-800"
-            >
-              Edit
-            </Typography>
-          </Button>
-        );
-      },
+      width: 100,
+      headerClassName: "font-outfit font-semibold text-gray-700",
+      getActions: (params: GridRowParams) => [
+        // <Button
+        //   aria-label="Edit"
+        //   aria-controls="Edit-button"
+        //   aria-haspopup="false"
+        //   // onClick={handleClick}
+        //   size="small"
+        //   key={params.id}
+        // >
+        //   <Typography
+        //     variant="body2"
+        //     className="font-outfit font-semibold normal-case text-gray-800"
+        //   >
+        //     Edit
+        //   </Typography>
+        // </Button>,
+        <GridActionsCellItem
+          icon={<AiOutlineEdit />}
+          label="Edit"
+          onClick={() => console.log("clicked")}
+          key={params.id}
+        />,
+      ],
+      // renderCell: () => {
+      //   return (
+      //     <Button
+      //       aria-label="Edit"
+      //       aria-controls="Edit-button"
+      //       aria-haspopup="false"
+      //       // onClick={handleClick}
+      //       size="small"
+      //     >
+      //       <Typography
+      //         variant="body2"
+      //         className="font-outfit font-semibold normal-case text-gray-800"
+      //       >
+      //         Edit
+      //       </Typography>
+      //     </Button>
+      //   );
+      // },
     },
   ];
 
@@ -332,6 +344,7 @@ const RecentProjectTable = () => {
               pagination: {
                 paginationModel: {
                   pageSize: 5,
+                  page: 0,
                 },
               },
             }}
@@ -378,4 +391,4 @@ const RecentProjectTable = () => {
   );
 };
 
-export default RecentProjectTable;
+export default AllSchoolsComp;
