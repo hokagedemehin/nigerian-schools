@@ -38,17 +38,6 @@ const CustomSchoolLogo = styled(Avatar)(({ theme }) => ({
   },
 }));
 
-// const CustomContributorAvatar = styled(Avatar)(({ theme }) => ({
-//   [theme.breakpoints.up("md")]: {
-//     width: "30px",
-//     height: "30px",
-//   },
-//   [theme.breakpoints.down("md")]: {
-//     width: "23px",
-//     height: "23px",
-//   },
-// }));
-
 const CustomContributorGroupAvatar = styled(AvatarGroup)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     "& .MuiAvatar-root": {
@@ -77,7 +66,7 @@ interface IDataTable {
   status: string;
 }
 
-const RecentProjectTable = () => {
+const StateSchoolsComp = () => {
   const [projectExists] = useState(true);
 
   // ************* TABLE DATA *************
@@ -105,26 +94,25 @@ const RecentProjectTable = () => {
           category: "logo",
         }),
         name: faker.helpers.arrayElement([
-          "University of Ibadan",
-          "University of Lagos",
-          "University of Benin",
-          "University of Abuja",
-          "University of Port Harcourt",
-          "University of Calabar",
-          "University of Jos",
-          "University of Ilorin",
-          "University of Maiduguri",
-          "University of Uyo",
-          "University of Nigeria",
-          "University of Benin",
-          "University of Abuja",
-          "University of Port Harcourt",
-          "University of Calabar",
-          "University of Jos",
-          "University of Ilorin",
-          "University of Maiduguri",
-          "University of Uyo",
-          "University of Nigeria",
+          "Abia State University",
+          "Adamawa State University",
+          "Adekunle Ajasin University",
+
+          "Akwa Ibom State University",
+          "Ambrose Alli University",
+          "Anambra State University",
+          "Bauchi State University",
+          "Benue State University",
+          "Borno State University",
+          "Cross River State University of Technology",
+          "Delta State University",
+          "Ebonyi State University",
+          "Ekiti State University",
+          "Enugu State University of Science and Technology",
+          "Gombe State University",
+          "Ibrahim Badamasi Babangida University",
+          "Ignatius Ajuru University of Education",
+          "Imo State University",
         ]),
         contributors: contributorsAvatar,
         date: dayjs(faker.date.past()).format("MMM DD, YYYY"),
@@ -332,6 +320,7 @@ const RecentProjectTable = () => {
               pagination: {
                 paginationModel: {
                   pageSize: 5,
+                  page: 0,
                 },
               },
             }}
@@ -378,4 +367,4 @@ const RecentProjectTable = () => {
   );
 };
 
-export default RecentProjectTable;
+export default StateSchoolsComp;

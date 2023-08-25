@@ -38,17 +38,6 @@ const CustomSchoolLogo = styled(Avatar)(({ theme }) => ({
   },
 }));
 
-// const CustomContributorAvatar = styled(Avatar)(({ theme }) => ({
-//   [theme.breakpoints.up("md")]: {
-//     width: "30px",
-//     height: "30px",
-//   },
-//   [theme.breakpoints.down("md")]: {
-//     width: "23px",
-//     height: "23px",
-//   },
-// }));
-
 const CustomContributorGroupAvatar = styled(AvatarGroup)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     "& .MuiAvatar-root": {
@@ -77,8 +66,8 @@ interface IDataTable {
   status: string;
 }
 
-const RecentProjectTable = () => {
-  const [projectExists] = useState(true);
+const FederalSchoolsComp = () => {
+  const [projectExists] = useState(false);
 
   // ************* TABLE DATA *************
   const [tableData, setTableData] = useState<IDataTable[]>([]);
@@ -105,26 +94,16 @@ const RecentProjectTable = () => {
           category: "logo",
         }),
         name: faker.helpers.arrayElement([
-          "University of Ibadan",
           "University of Lagos",
+          "University of Ibadan",
           "University of Benin",
-          "University of Abuja",
           "University of Port Harcourt",
-          "University of Calabar",
+          "University of Abuja",
           "University of Jos",
           "University of Ilorin",
           "University of Maiduguri",
-          "University of Uyo",
-          "University of Nigeria",
-          "University of Benin",
-          "University of Abuja",
-          "University of Port Harcourt",
           "University of Calabar",
-          "University of Jos",
-          "University of Ilorin",
-          "University of Maiduguri",
           "University of Uyo",
-          "University of Nigeria",
         ]),
         contributors: contributorsAvatar,
         date: dayjs(faker.date.past()).format("MMM DD, YYYY"),
@@ -332,6 +311,7 @@ const RecentProjectTable = () => {
               pagination: {
                 paginationModel: {
                   pageSize: 5,
+                  page: 0,
                 },
               },
             }}
@@ -378,4 +358,4 @@ const RecentProjectTable = () => {
   );
 };
 
-export default RecentProjectTable;
+export default FederalSchoolsComp;

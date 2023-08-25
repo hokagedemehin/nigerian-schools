@@ -41,7 +41,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import LinearProgress from '@mui/material/LinearProgress';
-
+import Fab from '@mui/material/Fab';
 import { faker } from '@faker-js/faker/locale/en_NG';
 
 import {
@@ -71,6 +71,7 @@ export {
   AvatarGroup,
   Typography,
   Menu,
+  Fab,
   LinearProgress,
   MenuIcon,
   Container,

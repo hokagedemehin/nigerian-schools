@@ -146,6 +146,12 @@ const DahsboardPage = () => {
         </div>
         {/* recent projects */}
         <div className="mt-8">
+          <Typography
+            variant="h6"
+            className="mb-7 font-outfit text-xl font-semibold text-black md:text-2xl"
+          >
+            Projects recently contributed to:
+          </Typography>
           <RecentProjectTable />
         </div>
       </div>

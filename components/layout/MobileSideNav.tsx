@@ -64,7 +64,9 @@ const MobileSideNavComp = ({ onClose }: { onClose: () => void }) => {
             <Link
               href="/projects"
               className={`${
-                pathname == "/projects"
+                pathname == "/projects" ||
+                pathname == "/projects/[id]" ||
+                pathname == "/projects/add"
                   ? " bg-white text-black "
                   : " bg-main text-white hover:bg-gray-600"
               } my-4 flex items-center space-x-4 rounded-r-lg px-4 py-2 transition-all duration-300 ease-in  `}
